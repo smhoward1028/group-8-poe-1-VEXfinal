@@ -222,10 +222,10 @@ def pointTurn(setPoint):
     #Define kP and kD values for the CW and CCW turns
     if (clockwise):
         kP = 0.14   #Values if clockwise
-        kD = 0.32
+        kD = 0.41
     else:           #Values if counterclockwise
         kP = 0.14
-        kD = 0.31
+        kD = 0.49
     
     #Define the maximum velocity and previous error terms
     maxVelocity = 50    #Units: %
@@ -297,7 +297,7 @@ def main():
     bump()                     # Call bump() to execute the program
     inertialCalibration()      # Calibrate the inertial sensor
 
-    driveStraight(95, 0, 100) #Drive to stand
+    driveStraight(94, 0, 100) #Drive to stand
         #decelerate()              #Decelerate the robot
     liftArm(20, 40)            #Lift ball from stand
         #decelerate()
@@ -308,14 +308,14 @@ def main():
     pointTurn(48)             #Orient robot to face box
         #Decelerate function
     driveStraight(10, 0, 60)    #Drive forward to box
-    liftArm(20, -30)           #Lower ball into box
+    liftArm(20, -40)           #Lower ball into box
     liftArm(20, 90)            #Lift arm back up to 90 degrees
     pointTurn(137)             #Turn 45 degrees
         #Decelerate function
-    driveStraight(17, 0, -90)    #Drive forward to third path
+    driveStraight(21, 0, -90)    #Drive forward to third path
     pointTurn(90)              #Orient robot to drive straight
         #Decelerate function
-    driveStraight(40, 0, -100)   #Drive straight to final spot
+    driveStraight(39, 0, -100)   #Drive straight to final spot
 
 
 #---------------------------------------------------------------------
